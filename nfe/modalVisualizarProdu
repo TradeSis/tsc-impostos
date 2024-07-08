@@ -1,0 +1,495 @@
+<!--------- VISUALIZAR --------->
+<div class="modal fade bd-example-modal-lg" id="visualizarModal" tabindex="-1" aria-labelledby="visualizarModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Impostos Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <ul class="nav nav-tabs mt-2" id="tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link ts-tabModal active" id="produ-tab" data-bs-toggle="tab" href="#produ"
+                            role="tab" aria-controls="produ" aria-selected="true">Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ts-tabModal" id="icms-tab" data-bs-toggle="tab" href="#icms" role="tab"
+                            aria-controls="icms" aria-selected="false">ICMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ts-tabModal" id="pis-tab" data-bs-toggle="tab" href="#pis" role="tab"
+                            aria-controls="pis" aria-selected="false">PIS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ts-tabModal" id="cofins-tab" data-bs-toggle="tab" href="#cofins" role="tab"
+                            aria-controls="cofins" aria-selected="false">COFINS</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabsContent">
+                    <div class="tab-pane fade show active" id="produ" role="tabpanel" aria-labelledby="produ-tab">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="form-label ts-label">eanProduto</label>
+                                <input type="text" class="form-control ts-input" name="eanProduto" id="eanProduto" readonly>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="form-label ts-label">nomeProduto</label>
+                                <input type="text" class="form-control ts-input" name="nomeProduto" id="nomeProduto" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">valorCompra</label>
+                                <input type="text" class="form-control ts-input" name="valorCompra" id="valorCompra" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">precoProduto</label>
+                                <input type="text" class="form-control ts-input" name="precoProduto" id="precoProduto" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md">
+                                <label class="form-label ts-label">codigoNcm</label>
+                                <input type="text" class="form-control ts-input" name="codigoNcm" id="codigoNcm" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">codigoCest</label>
+                                <input type="text" class="form-control ts-input" name="codigoCest" id="codigoCest" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">imgProduto</label>
+                                <input type="text" class="form-control ts-input" name="imgProduto" id="imgProduto" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">Marca</label>
+                                <input type="text" class="form-control ts-input" name="idMarca" id="idMarca" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md">
+                                <label class="form-label ts-label">ativoProduto</label>
+                                <input type="text" class="form-control ts-input" name="ativoProduto" id="ativoProduto" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">propagandaProduto</label>
+                                <input type="text" class="form-control ts-input" name="propagandaProduto" id="propagandaProduto" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">descricaoProduto</label>
+                                <input type="text" class="form-control ts-input" name="descricaoProduto" id="descricaoProduto" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">idPessoaFornecedor</label>
+                                <input type="text" class="form-control ts-input" name="idPessoaFornecedor" id="idPessoaFornecedor" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md">
+                                <label class="form-label ts-label">refProduto</label>
+                                <input type="text" class="form-control ts-input" name="refProduto" id="refProduto" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">dataAtualizacaoTributaria</label>
+                                <input type="datetime-local" class="form-control ts-input" name="dataAtualizacaoTributaria" id="dataAtualizacaoTributaria" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">codImendes</label>
+                                <input type="text" class="form-control ts-input" name="codImendes" id="codImendes" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">codigoGrupo</label>
+                                <input type="text" class="form-control ts-input" name="codigoGrupo" id="codigoGrupo" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md">
+                                <label class="form-label ts-label">substICMSempresa</label>
+                                <input type="text" class="form-control ts-input" name="substICMSempresa" id="substICMSempresa" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">substICMSFornecedor</label>
+                                <input type="text" class="form-control ts-input" name="substICMSFornecedor" id="substICMSFornecedor" readonly>
+                            </div>
+                            <div class="col-md">
+                                <label class="form-label ts-label">prodZFM</label>
+                                <input type="text" class="form-control ts-input" name="prodZFM" id="prodZFM" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="icms" role="tabpanel" aria-labelledby="icms-tab">
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">Imposto</label>
+                                <input type="text" class="form-control ts-input" id="nomeImposto_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vTotTrib</label>
+                                <input type="text" class="form-control ts-input" id="vTotTrib_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">orig</label>
+                                <input type="text" class="form-control ts-input" id="orig_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CSOSN</label>
+                                <input type="text" class="form-control ts-input" id="CSOSN_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBCST</label>
+                                <input type="text" class="form-control ts-input" id="modBCST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pMVAST</label>
+                                <input type="text" class="form-control ts-input" id="pMVAST_ICMS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCST</label>
+                                <input type="text" class="form-control ts-input" id="vBCST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMSST</label>
+                                <input type="text" class="form-control ts-input" id="pICMSST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSST</label>
+                                <input type="text" class="form-control ts-input" id="vICMSST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CST</label>
+                                <input type="text" class="form-control ts-input" id="CST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBC</label>
+                                <input type="text" class="form-control ts-input" id="modBC_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBC</label>
+                                <input type="text" class="form-control ts-input" id="vBC_ICMS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMS</label>
+                                <input type="text" class="form-control ts-input" id="pICMS_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMS</label>
+                                <input type="text" class="form-control ts-input" id="vICMS_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCP</label>
+                                <input type="text" class="form-control ts-input" id="pFCP_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCP</label>
+                                <input type="text" class="form-control ts-input" id="vFCP_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">qBCMono</label>
+                                <input type="text" class="form-control ts-input" id="qBCMono_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_ICMS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCP</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCP_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBCST</label>
+                                <input type="text" class="form-control ts-input" id="pRedBCST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCPST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCPST</label>
+                                <input type="text" class="form-control ts-input" id="pFCPST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vFCPST_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_ICMS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSSTDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSSTDeson_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBC</label>
+                                <input type="text" class="form-control ts-input" id="pRedBC_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSDeson_ICMS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">motDesICMS</label>
+                                <input type="text" class="form-control ts-input" id="motDesICMS_ICMS" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pis" role="tabpanel" aria-labelledby="pis-tab">
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">Imposto</label>
+                                <input type="text" class="form-control ts-input" id="nomeImposto_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vTotTrib</label>
+                                <input type="text" class="form-control ts-input" id="vTotTrib_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">orig</label>
+                                <input type="text" class="form-control ts-input" id="orig_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CSOSN</label>
+                                <input type="text" class="form-control ts-input" id="CSOSN_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBCST</label>
+                                <input type="text" class="form-control ts-input" id="modBCST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pMVAST</label>
+                                <input type="text" class="form-control ts-input" id="pMVAST_PIS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCST</label>
+                                <input type="text" class="form-control ts-input" id="vBCST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMSST</label>
+                                <input type="text" class="form-control ts-input" id="pICMSST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSST</label>
+                                <input type="text" class="form-control ts-input" id="vICMSST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CST</label>
+                                <input type="text" class="form-control ts-input" id="CST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBC</label>
+                                <input type="text" class="form-control ts-input" id="modBC_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBC</label>
+                                <input type="text" class="form-control ts-input" id="vBC_PIS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMS</label>
+                                <input type="text" class="form-control ts-input" id="pICMS_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMS</label>
+                                <input type="text" class="form-control ts-input" id="vICMS_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCP</label>
+                                <input type="text" class="form-control ts-input" id="pFCP_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCP</label>
+                                <input type="text" class="form-control ts-input" id="vFCP_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">qBCMono</label>
+                                <input type="text" class="form-control ts-input" id="qBCMono_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_PIS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCP</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCP_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBCST</label>
+                                <input type="text" class="form-control ts-input" id="pRedBCST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCPST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCPST</label>
+                                <input type="text" class="form-control ts-input" id="pFCPST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vFCPST_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_PIS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSSTDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSSTDeson_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBC</label>
+                                <input type="text" class="form-control ts-input" id="pRedBC_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSDeson_PIS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">motDesICMS</label>
+                                <input type="text" class="form-control ts-input" id="motDesICMS_PIS" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="cofins" role="tabpanel" aria-labelledby="cofins-tab">
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">Imposto</label>
+                                <input type="text" class="form-control ts-input" id="nomeImposto_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vTotTrib</label>
+                                <input type="text" class="form-control ts-input" id="vTotTrib_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">orig</label>
+                                <input type="text" class="form-control ts-input" id="orig_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CSOSN</label>
+                                <input type="text" class="form-control ts-input" id="CSOSN_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBCST</label>
+                                <input type="text" class="form-control ts-input" id="modBCST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pMVAST</label>
+                                <input type="text" class="form-control ts-input" id="pMVAST_COFINS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCST</label>
+                                <input type="text" class="form-control ts-input" id="vBCST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMSST</label>
+                                <input type="text" class="form-control ts-input" id="pICMSST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSST</label>
+                                <input type="text" class="form-control ts-input" id="vICMSST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">CST</label>
+                                <input type="text" class="form-control ts-input" id="CST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">modBC</label>
+                                <input type="text" class="form-control ts-input" id="modBC_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBC</label>
+                                <input type="text" class="form-control ts-input" id="vBC_COFINS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pICMS</label>
+                                <input type="text" class="form-control ts-input" id="pICMS_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMS</label>
+                                <input type="text" class="form-control ts-input" id="vICMS_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCP</label>
+                                <input type="text" class="form-control ts-input" id="pFCP_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCP</label>
+                                <input type="text" class="form-control ts-input" id="vFCP_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">qBCMono</label>
+                                <input type="text" class="form-control ts-input" id="qBCMono_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_COFINS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCP</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCP_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBCST</label>
+                                <input type="text" class="form-control ts-input" id="pRedBCST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vBCFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vBCFCPST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pFCPST</label>
+                                <input type="text" class="form-control ts-input" id="pFCPST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vFCPST</label>
+                                <input type="text" class="form-control ts-input" id="vFCPST_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSMono</label>
+                                <input type="text" class="form-control ts-input" id="vICMSMono_COFINS" readonly>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSSTDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSSTDeson_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">pRedBC</label>
+                                <input type="text" class="form-control ts-input" id="pRedBC_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">vICMSDeson</label>
+                                <input type="text" class="form-control ts-input" id="vICMSDeson_COFINS" readonly>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label ts-label">motDesICMS</label>
+                                <input type="text" class="form-control ts-input" id="motDesICMS_COFINS" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
