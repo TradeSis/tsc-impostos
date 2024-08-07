@@ -2,13 +2,19 @@
 //lucas 09102023 novo padrao
 include_once __DIR__ . "/../config.php";
 include_once "header.php";
-include_once ROOT . "/sistema/database/loginAplicativo.php";
 
-$nivelMenuLogin = buscaLoginAplicativo($_SESSION['idLogin'], 'Impostos');
+if (
+    !isset($_SESSION['nomeAplicativo']) || 
+    $_SESSION['nomeAplicativo'] !== 'Impostos' || 
+    !isset($_SESSION['nivelMenu']) || 
+    $_SESSION['nivelMenu'] === null
+) {
+    $_SESSION['nomeAplicativo'] = 'Impostos';
+    include_once ROOT . "/sistema/database/loginAplicativo.php";
 
-$configuracao = 1;
-
-$nivelMenu = $nivelMenuLogin['nivelMenu'];
+    $nivelMenuLogin = buscaLoginAplicativo($_SESSION['idLogin'], $_SESSION['nomeAplicativo']);
+    $_SESSION['nivelMenu'] = $nivelMenuLogin['nivelMenu'];
+}
 
 ?>
 <!doctype html>
@@ -41,7 +47,7 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                             $tab = $_GET['tab'];
                         }
                         ?>
-                        <?php if ($nivelMenu >= 1) {
+                        <?php if ($_SESSION['nivelMenu'] >= 1) {
                             if ($tab == '') {
                                 $tab = 'nfe';
                             } ?>
@@ -51,49 +57,49 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                                 href="?tab=nfe" role="tab">NFE </a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "calculo") {echo " active ";} ?>" 
                                 href="?tab=calculo" role="tab">Calculo</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "operacaofiscal") {echo " active ";} ?>" 
                                 href="?tab=operacaofiscal" role="tab">Operação Fiscal</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "regrafiscal") {echo " active ";} ?>" 
                                 href="?tab=regrafiscal" role="tab">Regra Fiscal</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "ncm") {echo " active ";} ?>" 
                                 href="?tab=ncm" role="tab">NCM/CEST</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "operacoes") {echo " active ";} ?>" 
                                 href="?tab=operacoes" role="tab">Operações</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "cnaeClasse") {echo " active ";} ?>" 
                                 href="?tab=cnaeClasse" role="tab">CNAE</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 1) { ?>
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
                         <!-- Lucas 30042024 - desabilitado Historico -->
                             <li class="nav-item mr-1 d-none">
                                 <a class="nav-link 
@@ -101,7 +107,7 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                                 href="?tab=fishistorico" role="tab">Api Historico</a>
                             </li>
                         <?php }
-                        if ($nivelMenu >= 4) { ?>
+                        if ($_SESSION['nivelMenu'] >= 4) { ?>
                             <li class="nav-item mr-1">
                                 <a class="nav-link 
                                 <?php if ($tab == "configuracao") {echo " active ";} ?>" 
@@ -120,29 +126,51 @@ $nivelMenu = $nivelMenuLogin['nivelMenu'];
                         $getTab = '';
                     } ?>
                     <select class="form-select mt-2" id="subtabServices" style="color:#000; width:160px;text-align:center; ">
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=ncm" 
-                        <?php if ($getTab == "ncm") {echo " selected ";} ?>>NCM/CEST</option>
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=operacoes" 
-                        <?php if ($getTab == "operacoes") {echo " selected ";} ?>>Operações</option>
+                        <?php if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=nfe" 
+                        <?php if ($getTab == "nfe") {echo " selected ";} ?>>NFE</option>
+                        <?php }
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=cnaeClasse" 
-                        <?php if ($getTab == "cnaeClasse") {echo " selected ";} ?>>CNAE</option>
-
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=calculo" 
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=calculo" 
                         <?php if ($getTab == "calculo") {echo " selected ";} ?>>Calculo</option>
+                        <?php }
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=operacaofiscal" 
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=operacaofiscal" 
                         <?php if ($getTab == "operacaofiscal") {echo " selected ";} ?>>Operação Fiscal</option>
+                        <?php }
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=regrafiscal" 
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=regrafiscal" 
                         <?php if ($getTab == "regrafiscal") {echo " selected ";} ?>>Regra Fiscal</option>
+                        <?php }
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=fishistorico" 
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=ncm" 
+                        <?php if ($getTab == "ncm") {echo " selected ";} ?>>NCM/CEST</option>
+                        <?php }
+
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=operacoes" 
+                        <?php if ($getTab == "operacoes") {echo " selected ";} ?>>Operações</option>
+                        <?php }
+
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=cnaeClasse" 
+                        <?php if ($getTab == "cnaeClasse") {echo " selected ";} ?>>CNAE</option>
+                        <?php }
+
+                        if ($_SESSION['nivelMenu'] >= 1) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=fishistorico" 
                         <?php if ($getTab == "fishistorico") {echo " selected ";} ?>>Api Historico</option>
+                        <?php }
 
-                        <option value="<?php echo URLROOT ?>/impostos/index.php?tab=configuracao" 
+                        if ($_SESSION['nivelMenu'] >= 4) { ?>
+                        <option value="<?php echo URLROOT ?>/impostos/?tab=configuracao" 
                         <?php if ($getTab == "configuracao") {echo " selected ";} ?>>Configurações</option>
+                        <?php } ?>
                     </select>
                 </div>
 
